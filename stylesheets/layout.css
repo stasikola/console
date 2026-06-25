@@ -205,7 +205,7 @@
   text-underline-offset: 0.46875vw;
   text-decoration-thickness: 0.15625vw;
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .burgerMenu {
     top: 15px;
     left: 15px;
@@ -220,7 +220,7 @@
   }
 
   #burger {
-    width: 46px;
+    width: 48px;
   }
 
   .mainMenu {
