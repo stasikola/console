@@ -1,0 +1,713 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  width: 100vw;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.section-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  color: #ffffff;
+  font-family: "Baltica Pixel 13", "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12.5vw;
+  line-height: 1;
+  text-transform: lowercase;
+  margin-bottom: 1.5vw;
+}
+
+.hero-subtitle {
+  color: #ffffff;
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 500;
+  font-size: 2.5vw;
+  line-height: 1.2;
+}
+
+.section-blog {
+  position: relative;
+  width: 100vw;
+  padding: 6vw 3.125vw;
+}
+
+.blog-top-grid {
+  display: grid;
+  grid-template-columns: 38.5vw 5vw 47vw;
+  grid-template-areas: "leftcolumn . text";
+  margin-bottom: 12vw;
+  align-items: start;
+}
+
+.slider-left-column {
+  grid-area: leftcolumn;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vw;
+}
+
+.slider-rect {
+  width: 38.5vw;
+  height: 22.6vw;
+  background-color: #d9d9d9;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s ease;
+  border: 0.23vw solid #000000;
+  border-radius: 1.5vw;
+}
+
+.blog-text-block {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.blog-desc-top {
+  width: 100%;
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 400;
+  font-size: 2.5vw;
+  line-height: 1.3;
+  margin-bottom: 3vw;
+}
+
+.link-read-full {
+  color: #000000;
+  text-decoration: none;
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 500;
+  font-size: 1.875vw;
+  margin-bottom: 3.5vw;
+  display: inline-block;
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 13vw;
+}
+
+.slider-arrow {
+  background: none;
+  border: none;
+  font-size: 3.75vw;
+  cursor: pointer;
+  padding: 0;
+  user-select: none;
+  line-height: 1;
+}
+
+.slider-dots {
+  display: flex;
+  gap: 0.93vw;
+  position: relative;
+  top: 0.5vw;
+}
+
+.slider-dots .dot {
+  width: 0.93vw;
+  height: 0.93vw;
+  border-radius: 50%;
+  background-color: #cccccc;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.slider-dots .dot.active {
+  background-color: #000000;
+}
+
+.blog-bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 8vw;
+}
+
+.blog-heading {
+  font-family: "Baltica Pixel 13", "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12.5vw;
+  line-height: 1;
+  text-transform: lowercase;
+  margin-bottom: 2vw;
+}
+
+.blog-subheading {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 500;
+  font-size: 2.45vw;
+  line-height: 1.2;
+  margin-bottom: 3.5vw;
+}
+
+.blog-desc-bottom {
+  max-width: 55.6vw;
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 400;
+  font-size: 2.5vw;
+  line-height: 1.3;
+  margin-bottom: 4vw;
+}
+
+.link-read-news {
+  color: #000000;
+  text-decoration: none;
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 500;
+  font-size: 2.45vw;
+  display: inline-block;
+}
+
+.section-download {
+  position: relative;
+  width: 100vw;
+  padding: 0 3.125vw 6vw 3.125vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.download-title {
+  font-family: "Baltica Pixel 13", "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12.5vw;
+  line-height: 1;
+  text-transform: lowercase;
+  margin-bottom: 1vw;
+}
+
+.download-subtitle {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 500;
+  font-size: 2.45vw;
+  margin-bottom: 6vw;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 3.125vw;
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  width: 22.8vw;
+  height: 23vw;
+  border: 0.15vw solid #000000;
+  border-radius: 3.125vw;
+  padding: 2.34vw 1.875vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 600;
+  font-size: 2.8vw;
+  margin-bottom: 1vw;
+}
+
+.card-body {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 400;
+  font-size: 1.48vw;
+  line-height: 1.3;
+}
+
+.btn-download {
+  position: absolute;
+  bottom: 1.875vw;
+  left: 1.875vw;
+  width: calc(100% - 3.75vw);
+  height: 3.28vw;
+  background-color: #d9d9d9;
+  border-radius: 1.1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8vw;
+  padding: 0 1.5vw;
+  color: #000000;
+  text-decoration: none;
+  border: 0.15vw solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.btn-download span {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 500;
+  font-size: 1.56vw;
+}
+
+.img-download {
+  width: 1.56vw;
+  height: 1.56vw;
+  object-fit: contain;
+  display: block;
+}
+
+.btn-download:hover {
+  border-color: #000000;
+}
+
+.btn-download:hover .img-download {
+  animation: bounce 0.6s ease infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-0.3vw);
+  }
+}
+
+.card-list {
+  list-style-type: disc;
+  padding-left: 1.2vw;
+}
+
+.card-list li {
+  margin-bottom: 0.4vw;
+}
+
+.card-list li:last-child {
+  margin-bottom: 0;
+}
+
+.article-header {
+  width: 100vw;
+  padding: 8vw 3.125vw 4vw 3.125vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 0.15vw solid #000000;
+}
+
+.article-meta {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 500;
+  font-size: 1.25vw;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2vw;
+  color: #666666;
+}
+
+.article-main-title {
+  font-family: "TT Mussels Trl";
+
+  font-weight: 500;
+  font-size: 5.5vw;
+  line-height: 1.1;
+  text-transform: lowercase;
+  margin-bottom: 3vw;
+  max-width: 90vw;
+}
+
+.article-reading-time {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 400;
+  font-size: 1.25vw;
+  color: #888888;
+}
+
+.article-container {
+  width: 100vw;
+  padding: 5vw 3.125vw 8vw 3.125vw;
+  display: grid;
+  grid-template-columns: 8vw 60vw 1fr;
+}
+
+.article-content {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vw;
+}
+
+.article-content p {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 400;
+  font-size: 1.6vw;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
+.article-lead {
+  font-size: 2.1vw !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+  margin-bottom: 1.5vw;
+}
+
+.article-step h2 {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 700;
+  font-size: 2.8vw;
+  line-height: 1.2;
+  margin-bottom: 2vw;
+  margin-top: 1.5vw;
+}
+
+.article-step p {
+  margin-bottom: 1.5vw;
+}
+
+.article-divider {
+  border: none;
+  border-top: 0.15vw solid #000000;
+  margin: 3vw 0;
+  width: 100%;
+}
+
+.article-features-list {
+  list-style-type: square;
+  padding-left: 2.5vw;
+  margin-bottom: 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.article-features-list li {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-size: 1.6vw;
+  line-height: 1.4;
+}
+
+.article-quote {
+  border-left: 0.3vw solid #000000;
+  padding-left: 2vw;
+  margin: 3vw 0;
+}
+
+.article-quote p {
+  font-size: 1.7vw !important;
+  font-style: normal;
+}
+
+.article-example-box {
+  background-color: #f2f2f2;
+  border: 0.15vw solid #000000;
+  border-radius: 1.5vw;
+  padding: 2.5vw;
+  margin: 2vw 0;
+  position: relative;
+}
+
+.box-tag {
+  position: absolute;
+  top: -1.2vw;
+  left: 2vw;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "TT Mussels Trl", sans-serif;
+  font-size: 1.1vw;
+  font-weight: 500;
+  padding: 0.3vw 1vw;
+  border-radius: 0.5vw;
+  text-transform: uppercase;
+}
+
+.article-footer-summary h3 {
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 700;
+  font-size: 2.8vw;
+  margin-bottom: 2vw;
+}
+
+.article-back-container {
+  margin-top: 4vw;
+}
+
+.link-back {
+  color: #000000;
+  text-decoration: none;
+  font-family: "TT Mussels Trl", sans-serif;
+  font-weight: 500;
+  font-size: 1.6vw;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.link-back:hover {
+  transform: translateX(-0.5vw);
+}
+
+@media (max-width: 768px) {
+  .blog-top-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "leftcolumn";
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+
+  .slider-left-column {
+    width: 100%;
+    gap: 15px;
+  }
+
+  .slider-rect {
+    width: 100%;
+    height: 210px;
+    border-width: 2px;
+    border-radius: 12px;
+  }
+
+  .slider-controls {
+    gap: 40px;
+  }
+
+  .slider-arrow {
+    font-size: 28px;
+  }
+
+  .slider-dots {
+    gap: 8px;
+    top: 2px;
+  }
+
+  .slider-dots .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .blog-desc-top {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .link-read-full {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .blog-bottom-content {
+    padding-left: 0;
+  }
+
+  .blog-subheading {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .blog-desc-bottom {
+    max-width: 100%;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+  }
+
+  .link-read-news {
+    font-size: 18px;
+  }
+
+  .download-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    min-height: 240px;
+    border-width: 2px;
+    border-radius: 20px;
+    padding: 30px 20px 80px 20px;
+  }
+
+  .card-header {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .card-body {
+    font-size: 16px;
+  }
+
+  .card-list {
+    padding-left: 20px;
+  }
+
+  .card-list li {
+    margin-bottom: 8px;
+  }
+
+  .btn-download {
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 44px;
+    border-radius: 10px;
+    padding: 0 15px;
+    gap: 10px;
+    border-width: 2px;
+  }
+
+  .btn-download span {
+    font-size: 16px;
+  }
+
+  .img-download {
+    width: 18px;
+    height: 18px;
+  }
+
+  .article-header {
+    padding: 100px 20px 30px 20px;
+  }
+
+  .article-meta {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .article-main-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  .article-reading-time {
+    font-size: 14px;
+  }
+
+  .article-container {
+    grid-template-columns: 1fr;
+    padding: 30px 20px 60px 20px;
+  }
+
+  .article-content {
+    grid-column: 1;
+    gap: 20px;
+  }
+
+  .article-content p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .article-lead {
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 10px;
+  }
+
+  .article-step h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .article-divider {
+    border-top-width: 2px;
+    margin: 25px 0;
+  }
+
+  .article-features-list {
+    padding-left: 25px;
+    gap: 10px;
+  }
+
+  .article-features-list li {
+    font-size: 16px;
+  }
+
+  .article-quote {
+    border-left-width: 4px;
+    padding-left: 15px;
+    margin: 25px 0;
+  }
+
+  .article-quote p {
+    font-size: 17px !important;
+  }
+
+  .article-example-box {
+    border-width: 2px;
+    border-radius: 12px;
+    padding: 25px 20px 20px 20px;
+    margin: 30px 0 20px 0;
+  }
+
+  .box-tag {
+    top: -14px;
+    left: 15px;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .article-footer-summary h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .article-back-container {
+    margin-top: 30px;
+  }
+
+  .link-back {
+    font-size: 16px;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-4px);
+    }
+  }
+}
