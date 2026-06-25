@@ -537,6 +537,7 @@ body {
     border-radius: 22.8px;
     padding: 16px;
     scroll-snap-align: center;
+    border: 0.3vw solid #000;
   }
 
   .block h3 {
@@ -571,6 +572,7 @@ body {
     border-radius: 22.8px;
     padding: 16px;
     gap: 8px;
+    border: 0.22vw solid #000;
   }
 
   .mailling h3 {
