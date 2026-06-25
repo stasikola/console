@@ -628,6 +628,10 @@ body {
     border: 0.3vw solid #000;
     justify-content: center;
   }
+  .maill .mailling:first-child .submit-btn {
+    width: 46px !important;
+    height: 32px !important;
+  }
 
   .maill .mailling:first-child .submit-btn p {
     font-size: 16px !important;
@@ -668,6 +672,7 @@ body {
     padding: 4px 8px;
     border-radius: 4px;
     gap: 6px;
+    margin-bottom: 5vw;
   }
 
   .custom-error-badge::before {
