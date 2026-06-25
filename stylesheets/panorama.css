@@ -6,6 +6,7 @@ body {
   height: 100%;
   overflow: hidden;
   background-color: #000;
+  -webkit-text-size-adjust: 100%; /* Запрещает мобильным браузерам искажать размер шрифтов */
 }
 
 .panorama-fullscreen-wrapper {
@@ -47,6 +48,7 @@ body {
   cursor: pointer;
   padding: 0 10px;
   line-height: 1;
+  flex-shrink: 0; /* Защита от сжатия на мобильных */
   transition:
     transform 0.1s ease,
     opacity 0.2s ease;
@@ -87,22 +89,23 @@ body {
 
 @media (max-width: 600px) {
   .century-fixed-controls {
-    bottom: 30px;
-    gap: 15px;
-    width: 90%;
+    bottom: 40px;
+    gap: 12px;
+    width: max-content;
+    max-width: 95vw;
   }
 
   .century-arrow {
-    font-size: 32px;
-    padding: 0 5px;
+    font-size: 28px !important;
+    padding: 0 4px;
   }
 
   .century-current {
-    font-size: 22px;
-    min-width: 85px;
+    font-size: 20px !important;
+    min-width: 75px;
   }
 
   .century-label {
-    font-size: 13px;
+    font-size: 12px !important;
   }
 }
