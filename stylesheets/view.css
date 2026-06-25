@@ -454,7 +454,7 @@ body {
   color: #ffffff !important;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   #sec1 {
     padding: 60px 16px 0;
     display: flex;
@@ -572,7 +572,7 @@ body {
     border-radius: 22.8px;
     padding: 16px;
     gap: 8px;
-    border: 0.22vw solid #000;
+    border: 0.3vw solid #000;
   }
 
   .mailling h3 {
@@ -625,6 +625,7 @@ body {
   .maill .mailling:first-child .submit-btn {
     padding: 0 8px !important;
     align-items: center;
+    border: 0.3vw solid #000;
     justify-content: center;
   }
 
@@ -637,6 +638,7 @@ body {
   .maill .mailling:last-child > div {
     padding: 0 !important;
     align-items: center;
+    border: 0.3vw solid #000;
     justify-content: center;
   }
 
@@ -651,6 +653,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0 !important;
+    border: 0.3vw solid #000;
   }
 
   #sec3 > .mailling > div p {
@@ -684,6 +687,7 @@ body {
     border-radius: 8px;
     min-height: 26px;
     padding: 0 !important;
+    border: 0.3vw solid #000;
   }
 
   .mailling .success-message p {
