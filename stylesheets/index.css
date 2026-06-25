@@ -136,6 +136,13 @@ body {
   padding: 0;
   user-select: none;
   line-height: 1;
+  /* попытка убрать свечение  */
+
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  text-decoration: none !important;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .slider-dots {
