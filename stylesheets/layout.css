@@ -23,7 +23,7 @@
 
 #burger {
   z-index: 2;
-  width: 5.4vw;
+  width: 5.45vw;
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
@@ -229,7 +229,6 @@
     padding: 0 40px 0 45px;
   }
 
-  /* При ховере меню на мобилке красиво раскрывается на всю ширину экрана */
   .burgerMenu:hover .mainMenu {
     width: calc(100vw - 30px);
   }
