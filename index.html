@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selected Design — Консоль</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/index.css" />
+    <script defer src="./js/index.js"></script>
+  </head>
+  <body>
+    <div class="burgerMenu">
+      <div id="burger">
+        <span class="menuLogo menuLogo-full" aria-hidden="true">
+          <span class="logoBar logoBar-top-left"></span>
+          <span class="logoBar logoBar-top-right"></span>
+          <span class="logoBar logoBar-bottom-left"></span>
+          <span class="logoBar logoBar-bottom-right"></span>
+          <span class="logoPlus logoPlus-full"></span>
+        </span>
+      </div>
+      <nav class="mainMenu">
+        <span class="menuLogo menuLogo-left" aria-hidden="true">
+          <span class="logoBar logoBar-top-left"></span>
+          <span class="logoBar logoBar-bottom-left"></span>
+          <span class="logoPlus logoPlus-left"></span>
+        </span>
+        <span class="menuLogo menuLogo-right" aria-hidden="true">
+          <span class="logoBar logoBar-top-right"></span>
+          <span class="logoBar logoBar-bottom-right"></span>
+          <span class="logoPlus logoPlus-right"></span>
+        </span>
+        <a href="index.html">главная</a>
+        <a href="about.html">о проекте</a>
+        <a href="view.html">блог</a>
+        <a href="panorama.html">панорама</a>
+      </nav>
+    </div>
+
+    <section class="section-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">консоль</h1>
+        <p class="hero-subtitle">Приложение которое возвращает в прошлое</p>
+      </div>
+    </section>
+
+    <section class="section-blog">
+      <div class="blog-top-grid">
+        <div class="slider-left-column">
+          <div class="slider-rect" id="photo-slider"></div>
+          <div class="slider-controls">
+            <button class="slider-arrow prev-btn">←</button>
+            <div class="slider-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <button class="slider-arrow next-btn">→</button>
+          </div>
+        </div>
+
+        <div class="blog-text-block">
+          <div class="blog-desc-top">
+            Наденьте очки — и&nbsp;погрузитесь в&nbsp;прошлое города. Гуляйте
+            в&nbsp;режиме историка, изучайте события и&nbsp;истории зданий.
+            Без&nbsp;музеев и&nbsp;лекций. Чтобы время стало осязаемым,
+            а&nbsp;архитектура — живой.
+          </div>
+          <a href="about.html" class="link-read-full">читать полностью →</a>
+        </div>
+      </div>
+
+      <div class="blog-bottom-content">
+        <div class="blog-heading">За гранью</div>
+        <div class="blog-subheading">
+          Новости, истории и обновления нейросети
+        </div>
+        <div class="blog-desc-bottom">
+          «За гранью» — это блог, в котором вы сможете прочитать интересные
+          новости, узнать об обновлениях, а также предложить свои истории
+        </div>
+        <a href="view.html" class="link-read-news">читать новости →</a>
+      </div>
+    </section>
+
+    <section class="section-download">
+      <div class="download-title">скачать</div>
+      <div class="download-subtitle">
+        Начните путешествие во времени прямо сейчас
+      </div>
+
+      <div class="cards-container">
+        <div class="card card-ios">
+          <div class="card-header">iOS</div>
+          <div class="card-body">
+            <ul class="card-list">
+              <li>250 MB</li>
+              <li>ARKit поддержка</li>
+              <li>iPhone 8 и новее</li>
+              <li>iPad Pro</li>
+            </ul>
+          </div>
+          <a href="#" class="btn-download">
+            <span>App Store</span>
+            <img src="images/down.png" alt="Скачать" class="img-download" />
+          </a>
+        </div>
+
+        <div class="card card-android">
+          <div class="card-header">Android</div>
+          <div class="card-body">
+            <ul class="card-list">
+              <li>280 MB</li>
+              <li>ARCore поддержка</li>
+              <li>Любые флагманские устройства</li>
+            </ul>
+          </div>
+
+          <a href="#" class="btn-download">
+            <span>Google Play</span>
+            <img src="images/down.png" alt="Скачать" class="img-download" />
+          </a>
+        </div>
+
+        <div class="card card-quest">
+          <div class="card-header">Meta Quest</div>
+          <div class="card-body">
+            <ul class="card-list">
+              <li>1.2 GB</li>
+              <li>Автономная работа</li>
+              <li>Мультиплееp</li>
+            </ul>
+          </div>
+          <a href="#" class="btn-download">
+            <span>Meta Store</span>
+            <img src="images/down.png" alt="Скачать" class="img-download" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

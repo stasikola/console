@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css and js</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/view.css" />
+    <script defer src="js/view.js"></script>
+    <link rel="icon" href="" type="image/png" />
+    <meta property="og:type" content="web-site" />
+    <meta property="og:title" content="css and js" />
+    <meta
+      property="og:description"
+      content="Рекламный плакат приложения Aion, которое создано для перемещение в прошлое."
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/stasikola/posteraionnN-Y/blob/main/images/cover.jpg?raw=true"
+    />
+    <meta property="og:url" content="" />
+  </head>
+  <body>
+    <div class="burgerMenu">
+      <div id="burger">
+        <span class="menuLogo menuLogo-full" aria-hidden="true">
+          <span class="logoBar logoBar-top-left"></span>
+          <span class="logoBar logoBar-top-right"></span>
+          <span class="logoBar logoBar-bottom-left"></span>
+          <span class="logoBar logoBar-bottom-right"></span>
+          <span class="logoPlus logoPlus-full"></span>
+        </span>
+      </div>
+      <nav class="mainMenu">
+        <span class="menuLogo menuLogo-left" aria-hidden="true">
+          <span class="logoBar logoBar-top-left"></span>
+          <span class="logoBar logoBar-bottom-left"></span>
+          <span class="logoPlus logoPlus-left"></span>
+        </span>
+        <span class="menuLogo menuLogo-right" aria-hidden="true">
+          <span class="logoBar logoBar-top-right"></span>
+          <span class="logoBar logoBar-bottom-right"></span>
+          <span class="logoPlus logoPlus-right"></span>
+        </span>
+        <a href="index.html">главная</a>
+        <a href="about.html">о проекте</a>
+        <a href="view.html">блог</a>
+        <a href="panorama.html">прототип</a>
+      </nav>
+    </div>
+    <section id="sec1">
+      <h1>За гранью</h1>
+      <h3>Новости, истории и обновления нейросети</h3>
+      <div class="filt">
+        <div class="filt-all">
+          <div class="filt-line"></div>
+          <button class="btn active" data-filter="all">все</button>
+        </div>
+        <div class="filt-rest">
+          <div class="filt-line"></div>
+          <div class="filt-btns">
+            <button class="btn" data-filter="his">история</button>
+            <button class="btn" data-filter="arh">архитектура</button>
+            <button class="btn" data-filter="viw">обзоры</button>
+            <button class="btn" data-filter="update">обновления</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="sec2">
+      <div class="block 1 update">
+        <h3>ОБНОВЛЕНИЕ</h3>
+        <p>Теперь ИИ определяет исторические события и рассказывает о них</p>
+        <a href="">читать далее →</a>
+      </div>
+      <div class="block 2 viw">
+        <h3>Топ времен для изучения</h3>
+        <p>
+          В статье один из первых пользователей рассказал, что стоит увидеть
+        </p>
+        <a href="">читать далее →</a>
+      </div>
+      <div class="block 3 viw">
+        <h3>Постеры</h3>
+        <p>посмотрите постеры, которые подготовил дизайнер</p>
+        <a href="">читать далее →</a>
+      </div>
+      <div class="block 4 arh">
+        <h3>Новые хрущевки</h3>
+        <p>Пользователь предложил свое виденье преобразования старых домов</p>
+        <a href="">читать далее →</a>
+      </div>
+      <div class="block 5 his">
+        <h3>1800-е годы</h3>
+        <p>Исследованиев котором рассказывается история 1800-х в Италии</p>
+        <a href="">читать далее →</a>
+      </div>
+      <div class="block 6 his">
+        <h3>Улицы Москвы</h3>
+        <p>В статье говорим об интересных улицах и их временном преображении</p>
+        <a href="">читать далее →</a>
+      </div>
+    </section>
+    <section id="sec3">
+      <div class="maill">
+        <form class="mailling 1" id="subscribeForm" novalidate>
+          <h3>Подпишитесь на рассылку</h3>
+          <p>Получайте новости об обновлениях и новых функциях</p>
+
+          <div class="form-wrapper" style="display: contents">
+            <div class="input-container" id="inputBox">
+              <input
+                type="email"
+                id="emailInput"
+                placeholder="E-mail"
+                required
+              />
+            </div>
+            <button type="submit" class="submit-btn">
+              <p>→</p>
+            </button>
+          </div>
+
+          <div class="success-message" style="display: none">
+            <p>Форма отправлена!</p>
+          </div>
+        </form>
+
+        <div class="mailling 2">
+          <h3>Предложите свою историю</h3>
+          <p>Расскажите историю которую должен узнать весь мир</p>
+          <div class="btn-hover"><p>Поделиться историей</p></div>
+        </div>
+      </div>
+      <div class="mailling 3">
+        <h3>Стать автором</h3>
+        <p>
+          Если вы являетесь постоянным пользователем нашего приложения или
+          вы&nbsp;увлекаетесь историей, мы будем рады сделать
+          вас&nbsp;постоянным автором
+        </p>
+        <div class="btn-hover"><p>Связаться с редакцией</p></div>
+      </div>
+    </section>
+  </body>
+</html>

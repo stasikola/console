@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>КОНСОЛЬ — Прототип Панорам</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <script defer src="js/scripts.js"></script>
+    <link rel="icon" href="" type="image/png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      /* Панорама на весь экран */
+      .panorama-fullscreen-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+      }
+
+      #panorama-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Панель переключения веков точно по Фигме (без рамок и фонов, прямо поверх панорамы) */
+      .century-fixed-controls {
+        position: absolute;
+        bottom: 50px; /* Смещаем в нижнюю часть экрана */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        user-select: none;
+        width: auto;
+      }
+
+      /* Кнопки-стрелки из Фигмы (44px, Bold Italic, Белые) */
+      .century-arrow {
+        background: none;
+        border: none;
+        font-family: "TT Mussels Trl", "Inter", sans-serif;
+        font-size: 44px;
+        font-weight: bold;
+        font-style: italic;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 0 10px;
+        line-height: 1;
+        transition:
+          transform 0.1s ease,
+          opacity 0.2s ease;
+      }
+      .century-arrow:hover {
+        opacity: 0.8;
+      }
+      .century-arrow:active {
+        transform: scale(0.95);
+      }
+
+      /* Приглушенные соседние века (16px, Medium, Серые) */
+      .century-label {
+        font-family: "TT Mussels Trl", "Inter", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #ffffffcd;
+        white-space: nowrap;
+        transition: color 0.3s ease;
+      }
+
+      /* Текущий активный век (32px, Bold Italic, Белый) */
+      .century-current {
+        font-family: "TT Mussels Trl", "Inter", sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        font-style: italic;
+        color: #ffffff;
+        min-width: 120px;
+        text-align: center;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
+
+      /* Коррекция для навигации, чтобы она была поверх */
+      .burgerMenu {
+        z-index: 100 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="burgerMenu">
+      <div id="burger">
+        <span class="menuLogo menuLogo-full" aria-hidden="true">
+          <span class="logoBar logoBar-top-left"></span>
+          <span class="logoBar logoBar-top-right"></span>
+          <span class="logoBar logoBar-bottom-left"></span>
+          <span class="logoBar logoBar-bottom-right"></span>
+          <span class="logoPlus logoPlus-full"></span>
+        </span>
+      </div>
+      <nav class="mainMenu">
+        <span class="menuLogo menuLogo-left" aria-hidden="true">
+          <span class="logoBar logoBar-top-left"></span>
+          <span class="logoBar logoBar-bottom-left"></span>
+          <span class="logoPlus logoPlus-left"></span>
+        </span>
+        <span class="menuLogo menuLogo-right" aria-hidden="true">
+          <span class="logoBar logoBar-top-right"></span>
+          <span class="logoBar logoBar-bottom-right"></span>
+          <span class="logoPlus logoPlus-right"></span>
+        </span>
+        <a href="index.html">главная</a>
+        <a href="about.html">о проекте</a>
+        <a href="view.html">блог</a>
+        <a href="panorama.html">панорама</a>
+      </nav>
+    </div>
+
+    <div class="panorama-fullscreen-wrapper">
+      <div id="panorama-container"></div>
+    </div>
+
+    <div class="century-fixed-controls">
+      <button class="century-arrow" id="btn-prev">←</button>
+
+      <span class="century-label" id="label-left">12 век</span>
+      <span class="century-current" id="label-current">16 век</span>
+      <span class="century-label" id="label-right">20 век</span>
+
+      <button class="century-arrow" id="btn-next">→</button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Массив панорам: 20 век (1-я), 16 век (2-я), 12 век (3-я)
+        const timeline = [
+          { century: "20 век", image: "images/panorama_1.jpg" },
+          { century: "16 век", image: "images/panorama_2.jpg" },
+          { century: "12 век", image: "images/panorama_3.jpg" },
+        ];
+
+        let currentIndex = 1; // По умолчанию открыт 16 век
+        let pannellumViewer = null;
+
+        function renderTimeline() {
+          if (pannellumViewer) {
+            pannellumViewer.destroy();
+          }
+
+          // Инициализируем панораму
+          pannellumViewer = pannellum.viewer("panorama-container", {
+            type: "equirectangular",
+            panorama: timeline[currentIndex].image,
+            autoLoad: true,
+            autoRotate: -0.5,
+            showControls: false,
+            compass: false,
+          });
+
+          // Рассчитываем левый и правый элементы
+          const leftIndex =
+            (currentIndex - 1 + timeline.length) % timeline.length;
+          const rightIndex = (currentIndex + 1) % timeline.length;
+
+          // Подставляем текст веков
+          document.getElementById("label-left").textContent =
+            timeline[leftIndex].century;
+          document.getElementById("label-current").textContent =
+            timeline[currentIndex].century;
+          document.getElementById("label-right").textContent =
+            timeline[rightIndex].century;
+        }
+
+        renderTimeline();
+
+        // Клик на стрелку вправо
+        document.getElementById("btn-next").addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % timeline.length;
+          renderTimeline();
+        });
+
+        // Клик на стрелку влево
+        document.getElementById("btn-prev").addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + timeline.length) % timeline.length;
+          renderTimeline();
+        });
+      });
+    </script>
+  </body>
+</html>

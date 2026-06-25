@@ -1,0 +1,313 @@
+* {
+  box-sizing: border-box;
+}
+
+.burgerMenu {
+  position: fixed;
+  top: 2.34375vw;
+  left: 3.125vw;
+  z-index: 100;
+  width: 5.15625vw;
+  height: 4.921875vw;
+}
+
+#burger,
+.mainMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5vw;
+  border-radius: 2.5vw;
+  background-color: #fff;
+}
+
+#burger {
+  z-index: 2;
+  width: 5.4vw;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.mainMenu {
+  z-index: 1;
+  width: 5.5vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.6vw;
+  padding: 0 4.53125vw 0 5.234375vw;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: left center;
+  transition:
+    width 0.28s ease,
+    opacity 0.2s ease;
+}
+
+.burgerMenu:hover #burger {
+  opacity: 0;
+}
+
+.burgerMenu:hover .mainMenu {
+  width: 51.015625vw;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menuLogo {
+  position: absolute;
+  top: 0.78125vw;
+  width: 3.59375vw;
+  height: 3.359375vw;
+  pointer-events: none;
+}
+
+.menuLogo-full,
+.menuLogo-left {
+  left: 0.78125vw;
+}
+
+.menuLogo-right {
+  right: 0.4vw;
+}
+
+.logoBar {
+  position: absolute;
+  width: 2.03125vw;
+  height: 0.625vw;
+  background-color: #ff1c0a;
+  transform-origin: center;
+}
+
+.logoBar-top-left {
+  top: 0.46875vw;
+  left: 0;
+  transform: rotate(-45deg);
+}
+
+.logoBar-top-right {
+  top: 0.46875vw;
+  right: 0;
+  transform: rotate(45deg);
+}
+
+.logoBar-bottom-left {
+  bottom: 0.46875vw;
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.logoBar-bottom-right {
+  right: 0;
+  bottom: 0.46875vw;
+  transform: rotate(-45deg);
+}
+
+.menuLogo-full .logoBar-top-right,
+.menuLogo-full .logoBar-bottom-right {
+  right: -0.3125vw;
+}
+
+.menuLogo-right .logoBar-top-right,
+.menuLogo-right .logoBar-bottom-right {
+  right: 0.234375vw;
+}
+
+.logoPlus {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 0.15625vw);
+  width: 1.25vw;
+  height: 1.25vw;
+  transform: translate(-50%, -50%);
+}
+
+.logoPlus::before,
+.logoPlus::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #ff1c0a;
+  transform: translate(-50%, -50%);
+}
+
+.logoPlus::before {
+  width: 0.3125vw;
+  height: 1.25vw;
+}
+
+.logoPlus::after {
+  width: 1.25vw;
+  height: 0.3125vw;
+}
+
+.logoPlus-left {
+  left: 1.32vw;
+  width: 0.625vw;
+  overflow: hidden;
+  transform: translate(0, -50%);
+}
+
+.logoPlus-left::before {
+  left: 100%;
+}
+
+.logoPlus-left::after {
+  left: 0;
+  width: 0.625vw;
+  transform: translate(0, -50%);
+}
+
+.logoPlus-right {
+  left: 1.32vw;
+  width: 0.625vw;
+  overflow: hidden;
+  transform: translate(0, -50%);
+}
+
+.logoPlus-right::before {
+  left: 0;
+}
+
+.logoPlus-right::after {
+  left: 0;
+  width: 0.625vw;
+  transform: translate(0, -50%);
+}
+
+.mainMenu a {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  color: #4c4c4c;
+  font-family: "TT Mussels Trl", Georgia, serif;
+  font-size: 1.875vw;
+  font-weight: 600;
+  line-height: 4.921875vw;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0;
+  transition:
+    color 0.18s ease,
+    opacity 0.2s ease;
+}
+
+.burgerMenu:hover .mainMenu a {
+  opacity: 1;
+}
+
+.mainMenu a:hover {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 0.46875vw;
+  text-decoration-thickness: 0.15625vw;
+}
+@media (max-width: 480px) {
+  .burgerMenu {
+    top: 15px;
+    left: 15px;
+    width: 44px;
+    height: 40px;
+  }
+
+  #burger,
+  .mainMenu {
+    height: 44px;
+    border-radius: 22px;
+  }
+
+  #burger {
+    width: 46px;
+  }
+
+  .mainMenu {
+    width: 48px;
+    gap: 15px;
+    padding: 0 40px 0 45px;
+  }
+
+  /* При ховере меню на мобилке красиво раскрывается на всю ширину экрана */
+  .burgerMenu:hover .mainMenu {
+    width: calc(100vw - 30px);
+  }
+
+  .menuLogo {
+    top: 6px;
+    width: 32px;
+    height: 30px;
+  }
+
+  .menuLogo-full,
+  .menuLogo-left {
+    left: 7px;
+  }
+
+  .menuLogo-right {
+    right: 4px;
+  }
+
+  .logoBar {
+    width: 18px;
+    height: 5px;
+  }
+
+  .logoBar-top-left,
+  .logoBar-top-right {
+    top: 4px;
+  }
+
+  .logoBar-bottom-left,
+  .logoBar-bottom-right {
+    bottom: 4px;
+  }
+
+  .menuLogo-full .logoBar-top-right,
+  .menuLogo-full .logoBar-bottom-right {
+    right: -3px;
+  }
+
+  .menuLogo-right .logoBar-top-right,
+  .menuLogo-right .logoBar-bottom-right {
+    right: 2px;
+  }
+
+  .logoPlus {
+    left: calc(50% + 1px);
+    width: 12px;
+    height: 12px;
+  }
+
+  .logoPlus::before {
+    width: 3px;
+    height: 12px;
+  }
+
+  .logoPlus::after {
+    width: 12px;
+    height: 3px;
+  }
+
+  .logoPlus-left,
+  .logoPlus-right {
+    left: 12px;
+    width: 6px;
+  }
+
+  .logoPlus-left::after,
+  .logoPlus-right::after {
+    width: 6px;
+  }
+
+  .mainMenu a {
+    font-size: 14px;
+    line-height: 44px;
+  }
+
+  .mainMenu a:hover {
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+}
